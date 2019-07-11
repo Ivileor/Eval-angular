@@ -1,0 +1,16 @@
+<h1>PhoneBook</h1>
+<app-add-contact-area></app-add-contact-area>
+
+<div>
+  <ul>
+    <li *ngFor="let contact of contacts; index as index">
+      <button [routerLink]="['/edit', index]">
+        {{contact.firstName}}
+        {{contact.lastName}}
+      </button>
+      <button (click)="listContact.delete(index)">
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>

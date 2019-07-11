@@ -1,0 +1,55 @@
+<div class="container">
+  <h1>
+    <div *ngIf="contact">
+      {{contact.firstName}}
+      {{contact.lastName}}
+    </div>
+
+  </h1>
+  <form>
+    <div>
+      <label for="firstName"> First Name </label>
+      <input type="text" id="firstName" [value]="contact.firstName">
+    </div>
+
+    <div>
+      <label for="lastName"> Last Name </label>
+      <input type="text" id="lastName" [value]="contact.lastName">
+    </div>
+
+    <div>
+      <label for="birthDate"> Birth Date </label>
+      <input type="datetime" id="birthDate" [value]="contact.birthAt">
+    </div>
+
+    <div>
+      <label for="notes"> Notes </label>
+      <input type="text" id="notes"[value]="contact.note">
+    </div>
+  </form>
+
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <div>
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" [(ngModel)]="phone.number" name="phone">
+    </div>
+
+    <div>
+      <label for="type">Type</label>
+      <input type="text" id="type" [(ngModel)]="phone.type" name="type">
+    </div>
+
+    <button type="submit" >Add</button>
+  </form>
+  <div>
+    <ul>
+      <li *ngFor="let num of phones">
+        {{num.id}},
+        {{num.number}},
+        {{num.type}}
+
+      </li>
+    </ul>
+  </div>
+
+</div>

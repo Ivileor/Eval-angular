@@ -1,0 +1,17 @@
+<div class="form-group">
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <div>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" [(ngModel)]="contact.firstName" name="firstName">
+    </div>
+
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" [(ngModel)]="contact.lastName" name="lastName">
+    </div>
+
+    <button type="submit" >Add</button>
+  </form>
+
+</div>
+
