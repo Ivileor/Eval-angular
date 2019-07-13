@@ -21,6 +21,7 @@ export class ListContactService {
 
   public createContact(contact: Contact):void{
     this.http.post<Contact>('http://127.0.0.1:8000/people',contact).subscribe();
+    this.listOfContacts.push(contact);
   }
 
   public update(contact: Contact):void{

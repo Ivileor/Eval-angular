@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" *ngIf="contact">
   <h1>
-    <div *ngIf="contact">
+    <div >
       {{contact.firstName}}
       {{contact.lastName}}
     </div>
@@ -41,6 +41,8 @@
 
     <button type="submit" >Add</button>
   </form>
+
+
   <div>
     <ul>
       <li *ngFor="let num of phones">
@@ -53,3 +55,4 @@
   </div>
 
 </div>
+<button [routerLink]="['']">Go to main menu</button>

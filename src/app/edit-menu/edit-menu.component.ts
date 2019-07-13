@@ -24,15 +24,19 @@ export class EditMenuComponent implements OnInit {
     this.route.params.subscribe((parameter) => {
       this.contact = this.listContact.listOfContacts[parameter.id]
 
-      for(let i of this.contact.phones){
-        this.listPhones.push( this.listContact.loadNumber(i));
+      if(this.contact){
+        for(let i of this.contact.phones){
+          this.listPhones.push( this.listContact.loadNumber(i));
+        }
       }
+
     });
   }
 
   onSubmit(){
     this.phone.person = '/people/' + this.contact.id.toString()
     this.listContact.createPhone(this.phone);
+    this.listPhones.push(this.phone);
   }
   get phones(): Array<Phones>{
 
