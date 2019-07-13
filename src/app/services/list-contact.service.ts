@@ -28,8 +28,9 @@ export class ListContactService {
 
   }
 
-  public delete(contact: number):void{
-    this.http.delete('http://127.0.0.1:8000/people/' + contact).subscribe();
+  public delete(contact: Contact):void{
+    this.http.delete('http://127.0.0.1:8000/people/' + contact.id).subscribe();
+    this.listOfContacts.splice(this.listOfContacts.indexOf(contact),1);
     console.log('contact deleted');
   }
 
